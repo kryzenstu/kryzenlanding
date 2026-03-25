@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KRYZEN – AI-vezérelt webfejlesztés</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark">
+
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <img src="logo.png" alt="KRYZEN" class="logo-img" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Szolgáltatások</a></li>
+        <li><a href="#portfolio">Portfólió</a></li>
+        <li><a href="#about">Rólunk</a></li>
+        <li><a href="#why">Miért mi?</a></li>
+        <li><a href="#contact">Kapcsolat</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Téma váltás">
+          <span class="icon-moon">🌙</span>
+          <span class="icon-sun">☀️</span>
+        </button>
+        <a href="#contact" class="btn btn-nav">Ajánlatkérés</a>
+      </div>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#services">Szolgáltatások</a>
+      <a href="#portfolio">Portfólió</a>
+      <a href="#about">Rólunk</a>
+      <a href="#why">Miért mi?</a>
+      <a href="#contact">Kapcsolat</a>
+      <a href="#contact" class="btn btn-nav">Ajánlatkérés</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <canvas id="shaderCanvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge">• AI-vezérelt webfejlesztés</div>
+      <h1><span id="tw-line1"></span><br /><span class="hero-dim" id="tw-line2"></span><span class="tw-cursor">|</span></h1>
+      <p class="hero-sub">AI segítségével optimalizált munkafolyamatokkal gyorsabb és költséghatékonyabb megoldásokat kínálunk. Üzletileg működő weboldalak, modern dizájnnal.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-white">Ajánlatkérés →</a>
+        <a href="#portfolio" class="btn btn-dark-outline">▷ Munkáink megtekintése</a>
+      </div>
+    </div>
+    <div class="scroll-mouse">
+      <div class="mouse"><div class="wheel"></div></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">SZOLGÁLTATÁSAINK</span>
+        <h2>Minden, amire szükséged van az <span class="dim">online sikerhez</span></h2>
+        <p>Átfogó megoldásokat kínálunk a webfejlesztés minden területén, a tervezéstől a karbantartásig.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+          <h3>Weboldal készítés</h3>
+          <p>Modern, reszponzív weboldalak tervezése és fejlesztése, amelyek tökéletesen illeszkednek vállalkozásod arculatához és céljaihoz.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <h3>Díjmentes Koncepcióterv</h3>
+          <p>Lásd az ötletedet működés közben – ingyen! 24-48 órán belül elkészítem az oldalad interaktív vázlatát.</p>
+          <span class="free-badge">Ingyenes</span>
+        </div>
+        <div class="service-card reveal">
+          <div class="icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></div>
+          <h3>Karbantartás & optimalizálás</h3>
+          <p>Folyamatos technikai támogatás, frissítések és teljesítményoptimalizálás.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M9 2v2M15 20v2M9 20v2M2 15h2M2 9h2M20 15h2M20 9h2"/></svg></div>
+          <h3>AI-alapú automatizálás</h3>
+          <p>Mesterséges intelligencia integrálása a munkafolyamatokba, chatbotok, tartalomelőállítás és üzleti automatizálás.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="section" id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">PORTFÓLIÓ</span>
+        <h2>Munkáink</h2>
+        <p>Néhány projekt, amelyen dolgoztunk – hamarosan bővülő portfólióval.</p>
+      </div>
+      <div class="carousel-wrapper">
+        <button class="carousel-btn" id="carouselPrev">&#8592;</button>
+        <div class="carousel-track" id="carouselTrack">
+          <div class="carousel-card" data-index="0" data-video="Videok/vid2.mp4" data-title="Konverziós landing oldal">
+            <div class="card-video-thumb">
+              <video class="card-thumb-video" src="Videok/vid2.mp4" preload="metadata" muted playsinline></video>
+              <div class="video-play-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="card-badge">KIEMELT</span>
+              <span class="video-duration">1:20</span>
+            </div>
+            <div class="card-body">
+              <h3>Konverziós landing oldal</h3>
+              <p class="card-cat">Landing</p>
+              <a href="#contact" class="btn-outline-pill">Részletek</a>
+            </div>
+          </div>
+          <div class="carousel-card" data-index="1" data-video="Videok/vid3.mp4" data-title="E-commerce áruház">
+            <div class="card-video-thumb">
+              <video class="card-thumb-video" src="Videok/vid3.mp4" preload="metadata" muted playsinline></video>
+              <div class="video-play-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="card-badge">KIEMELT</span>
+              <span class="video-duration">2:10</span>
+            </div>
+            <div class="card-body">
+              <h3>E-commerce áruház</h3>
+              <p class="card-cat">Webshop</p>
+              <a href="#contact" class="btn-outline-pill">Részletek</a>
+            </div>
+          </div>
+          <div class="carousel-card" data-index="2" data-video="Videok/vid4.mp4" data-title="Étterem & vendéglátás oldal">
+            <div class="card-video-thumb">
+              <video class="card-thumb-video" src="Videok/vid4.mp4" preload="metadata" muted playsinline></video>
+              <div class="video-play-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="card-badge">KIEMELT</span>
+              <span class="video-duration">1:35</span>
+            </div>
+            <div class="card-body">
+              <h3>Étterem & vendéglátás oldal</h3>
+              <p class="card-cat">Vendéglátás</p>
+              <a href="#contact" class="btn-outline-pill">Részletek</a>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-btn" id="carouselNext">&#8594;</button>
+      </div>
+      <div class="carousel-dots" id="carouselDots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VIDEO LIGHTBOX -->
+  <div class="video-lightbox" id="videoLightbox">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-inner">
+      <div class="lightbox-header">
+        <span class="lightbox-title" id="lightboxTitle"></span>
+        <button class="lightbox-close" id="lightboxClose">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="lightbox-video-wrap">
+        <video id="lightboxVideo" controls playsinline>
+          A böngésző nem támogatja a videó lejátszást.
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual reveal">
+          <div class="orbit-system" id="orbitSystem">
+            <!-- Kisugárzó pulse gyűrűk -->
+            <div class="pulse-ring pulse-1"></div>
+            <div class="pulse-ring pulse-2"></div>
+            <div class="pulse-ring pulse-3"></div>
+            <!-- Vizuális pályák -->
+            <div class="orbit-track track-1"></div>
+            <div class="orbit-track track-2"></div>
+            <!-- SVG connection line-ok hover-re -->
+            <svg class="orbit-lines" id="orbitLines" aria-hidden="true">
+              <defs>
+                <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.9"/>
+                  <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.4"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <!-- Középső AI mag -->
+            <div class="orbit-core">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M9 2v2M15 20v2M9 20v2M2 15h2M2 9h2M20 15h2M20 9h2"/></svg>
+            </div>
+            <!-- Orbit csomópontok -->
+            <div class="orbit-node node-user">
+              <div class="node-inner">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <span class="node-tooltip">Felhasználó</span>
+            </div>
+            <div class="orbit-node node-ai">
+              <div class="node-inner">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </div>
+              <span class="node-tooltip">AI Motor</span>
+            </div>
+            <div class="orbit-node node-dev">
+              <div class="node-inner">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <span class="node-tooltip">Fejlesztés</span>
+            </div>
+            <div class="orbit-node node-growth">
+              <div class="node-inner">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+              </div>
+              <span class="node-tooltip">Növekedés</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-content reveal">
+          <span class="section-label">RÓLUNK</span>
+          <h2>Emberek és technológia harmóniája</h2>
+          <p>Munkánk során aktívan használunk mesterséges intelligenciát, amely lehetővé teszi számunkra, hogy gyorsabban, hatékonyabban és kedvezőbb áron készítsünk modern, üzletileg működő weboldalakat.</p>
+          <p class="about-quote">"Az AI nem helyettesít minket — hanem felerősíti a szakmai tudásunkat."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="section" id="why">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">MIÉRT MINKET?</span>
+        <h2>Amit mástól nem kapsz meg</h2>
+        <p>Kombináljuk a legújabb technológiákat az évek tapasztalatával.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-card-top">
+            <div class="icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+            <div class="why-card-text">
+              <h3>Gyors kivitelezés</h3>
+              <p>AI-támogatott workflow-val 2x gyorsabban készülnek el projektjeink.</p>
+            </div>
+          </div>
+          <ul class="check-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg> AI-optimalizált folyamatok</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg> Határidő betartás garantált</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg> Gyors iteráció</li>
+          </ul>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-card-top">
+            <div class="icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4M22 5h-4M4 17v2M5 18H3"/></svg></div>
+            <div class="why-card-text">
+              <h3>Modern dizájn</h3>
+              <p>Letisztult, korszerű vizuális megoldások minden képernyőméretre.</p>
+            </div>
+          </div>
+          <ul class="check-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg> Reszponzív minden eszközre</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg> Felhasználóbarát UX</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg> Modern trendek</li>
+          </ul>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-card-top">
+            <div class="icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375M6.003 5.125A3 3 0 0 0 6.401 6.5M3.477 10.896a4 4 0 0 1 .585-.396M19.938 10.5a4 4 0 0 1 .585.396M6 18a4 4 0 0 1-1.967-.516M19.967 17.484A4 4 0 0 1 18 18"/></svg></div>
+            <div class="why-card-text">
+              <h3>AI-támogatott workflow</h3>
+              <p>Mesterséges intelligencia integráció minden munkafolyamatban.</p>
+            </div>
+          </div>
+          <ul class="check-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg> Automatizált feladatok</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg> AI tartalomgenerálás</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg> Chatbot integráció</li>
+          </ul>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-card-top">
+            <div class="icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+            <div class="why-card-text">
+              <h3>Üzleti fókusz</h3>
+              <p>Nem csak szép, hanem valóban működő oldalakat készítünk.</p>
+            </div>
+          </div>
+          <ul class="check-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg> Konverzióra optimalizált</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg> SEO-barát struktúra</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg> Mérhetű eredmények</li>
+          </ul>
+        </div>
+      </div>
+      <div class="why-cta">
+        <p>Készen állsz az online jelenlét fejlesztésére?</p>
+        <a href="#contact" class="btn btn-white">Beszéljünk! 🚀</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2>Kérj ingyenes konzultációt és Díjmentes Koncepciót</h2>
+        <div class="perks-row">
+          <span>• Semmi kötelezettség</span>
+          <span>• Valódi élmény – kattintható vázlat</span>
+          <span>• Gyors döntés</span>
+        </div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info-card reveal">
+          <h3>Kapcsolatfelvételi adatok</h3>
+          <div class="ci-item">
+            <div class="ci-item-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <div class="ci-item-text">
+              <span class="ci-label">Email</span>
+              <span class="ci-value" data-email="kryzenstu" data-domain="gmail.com"></span>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-item-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.7 12a19.79 19.79 0 0 1-3-8.59A2 2 0 0 1 3.72 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="ci-item-text">
+              <span class="ci-label">Telefon</span>
+              <span class="ci-value">+36 30 2504112</span>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-item-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="ci-item-text">
+              <span class="ci-label">Válaszidő</span>
+              <span class="ci-value">24 órán belül</span>
+            </div>
+          </div>
+          <div class="ci-stat">
+            <span class="ci-big">100%</span>
+            <span>Ingyenes konzultáció</span>
+          </div>
+        </div>
+        <div class="contact-form-card reveal">
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/xlgordzk" method="POST" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Név</label>
+                <input type="text" name="from_name" placeholder="Kovács János" required />
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="from_email" placeholder="janos@gmail.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Telefonszám</label>
+              <input type="tel" name="phone" placeholder="+36 30 000 0000" />
+            </div>
+            <div class="form-group">
+              <label>Milyen vállalkozása van?</label>
+              <input type="text" name="business_type" placeholder="pl. étterem, webshop, szolgáltató cég..." />
+            </div>
+            <div class="form-group">
+              <label>Milyen demo oldal érdekelné?</label>
+              <select name="demo_type">
+                <option value="" disabled selected>Válasszon egyet...</option>
+                <option>Vállalati bemutatkozó oldal</option>
+                <option>Webshop / E-commerce</option>
+                <option>Landing oldal / kampányoldal</option>
+                <option>Étterem / vendéglátás oldal</option>
+                <option>Szolgáltató / szakember oldal</option>
+                <option>Blog / tartalmi oldal</option>
+                <option>Egyéb (leírás az üzenetben)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Üzenet</label>
+              <textarea name="message" rows="4" placeholder="Írd le, mire van szükséged..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-white btn-block" id="contactSubmitBtn">Üzenet küldése →</button>
+            <div id="formFeedback" style="display:none; margin-top:12px; padding:12px 16px; border-radius:10px; font-size:0.88rem; font-weight:600; text-align:center;"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo"><img src="logo.png" alt="KRYZEN" class="logo-img" /></a>
+          <p>Modern weboldalak és webshopok készítése AI-támogatott munkafolyamatokkal.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Gyors linkek</h4>
+          <a href="#services">Szolgáltatások</a>
+          <a href="#portfolio">Portfólió</a>
+          <a href="#about">Rólunk</a>
+          <a href="#contact">Kapcsolat</a>
+        </div>
+        <div class="footer-links">
+          <h4>Jogi információk</h4>
+          <a href="#">Adatvédelmi nyilatkozat</a>
+          <a href="#">ÁSZF</a>
+          <a href="#">Cookie szabályzat</a>
+          <a href="#">Impresszum</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 KRYZEN. Minden jog fenntartva.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
