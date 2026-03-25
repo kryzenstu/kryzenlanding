@@ -1516,7 +1516,9 @@ html, body { overflow-x: hidden; }
   .service-card  { padding: 20px 18px; }
   .why-card      { padding: 22px 20px; }
 
-  /* Carousel */
+  /* Carousel — gombok elrejtve, track teljes szélességen */
+  .carousel-btn   { display: none; }
+  .carousel-wrapper { padding: 16px 0 8px; gap: 0; }
   .carousel-card.prev,
   .carousel-card.next {
     transform: translateX(calc(-50% - 200vw)) translateZ(-400px) rotateY(42deg) scale(0.7);
@@ -1524,8 +1526,7 @@ html, body { overflow-x: hidden; }
     pointer-events: none;
   }
   .carousel-card  { width: calc(100vw - 48px); }
-  .carousel-track { height: auto; min-height: 420px; }
-  .carousel-track { animation: none; } /* Float animáció kikapcs. mobilon */
+  .carousel-track { height: auto; min-height: 420px; animation: none; }
 
   /* Orbit (tablet tartomány: 481-767px) */
   .orbit-system { width: 260px; height: 260px; }
@@ -1556,8 +1557,9 @@ html, body { overflow-x: hidden; }
   .contact-form-card { padding: 20px 16px; }
 
   /* Carousel */
-  .carousel-card  { width: calc(100vw - 32px); }
+  .carousel-card  { width: calc(100vw - 24px); }
   .carousel-track { min-height: 380px; }
+  .carousel-card.active:hover { transform: translateX(-50%) scale(1); } /* hover scale kikapcs. */
 
   /* About / Orbit */
   .about-visual { min-height: 300px; padding: 20px; }
