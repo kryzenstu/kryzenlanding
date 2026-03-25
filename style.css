@@ -1479,37 +1479,108 @@ body.light .form-group select { background: rgba(0,0,0,0.04); }
 /* ===========================
    RESPONSIVE
 =========================== */
+/* Prevent horizontal scroll on all screen sizes */
+html, body { overflow-x: hidden; }
+
 @media (max-width: 1024px) {
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .about-grid    { grid-template-columns: 1fr; gap: 40px; }
   .footer-grid   { grid-template-columns: 1fr 1fr; gap: 32px; }
 }
 
+@media (max-width: 820px) {
+  /* Logo méret csökkentése mobilon */
+  .logo-img { height: 88px; }
+  .navbar.scrolled .logo-img { height: 64px; }
+  .nav-inner { padding: 10px 16px; gap: 16px; }
+}
+
 @media (max-width: 768px) {
   .section { padding: 64px 0; }
+
+  /* Hero */
+  .hero { padding: 100px 20px 64px; }
+  .hero h1 { font-size: clamp(2rem, 8vw, 3rem); margin-bottom: 16px; }
+  .hero-sub { font-size: 0.97rem; }
+  .hero-actions { flex-wrap: wrap; justify-content: center; }
+  .hero-actions .btn { padding: 13px 22px; font-size: 0.92rem; flex: 1 1 auto; max-width: 220px; text-align: center; }
+
+  /* Grids */
   .services-grid { grid-template-columns: 1fr; }
   .why-grid      { grid-template-columns: 1fr; }
   .contact-grid  { grid-template-columns: 1fr; }
   .form-row      { grid-template-columns: 1fr; }
   .footer-grid   { grid-template-columns: 1fr; gap: 28px; }
+
+  /* Kártya paddings */
+  .service-card  { padding: 20px 18px; }
+  .why-card      { padding: 22px 20px; }
+
+  /* Carousel */
   .carousel-card.prev,
   .carousel-card.next {
     transform: translateX(calc(-50% - 200vw)) translateZ(-400px) rotateY(42deg) scale(0.7);
     opacity: 0;
     pointer-events: none;
   }
-  .carousel-card { width: calc(100vw - 80px); }
-  .carousel-track { height: auto; min-height: 440px; }
+  .carousel-card  { width: calc(100vw - 48px); }
+  .carousel-track { height: auto; min-height: 420px; }
+  .carousel-track { animation: none; } /* Float animáció kikapcs. mobilon */
+
+  /* Orbit (tablet tartomány: 481-767px) */
+  .orbit-system { width: 260px; height: 260px; }
+  .track-1 { width: 164px; height: 164px; }
+  .track-2 { width: 240px; height: 240px; }
+
+  /* Kapcsolat */
   .contact-info-card,
-  .contact-form-card { padding: 24px 20px; }
+  .contact-form-card { padding: 24px 18px; }
+
+  /* Egyéb */
   .perks-row { gap: 10px; flex-direction: column; align-items: center; }
-  .hero-actions .btn { padding: 13px 22px; font-size: 0.92rem; }
+  .footer { padding: 48px 0 24px; }
 }
 
 @media (max-width: 480px) {
-  .about-visual { min-height: 320px; padding: 24px; }
+  /* Hero */
+  .hero { padding: 80px 16px 48px; }
+  .hero h1 { font-size: clamp(1.75rem, 9vw, 2.4rem); }
+  .hero-sub { font-size: 0.9rem; }
+  .hero-actions { gap: 8px; }
+  .hero-actions .btn { max-width: 100%; }
+
+  /* Kártyák */
+  .service-card { padding: 18px 16px; }
+  .why-card     { padding: 18px 16px; }
+  .contact-info-card,
+  .contact-form-card { padding: 20px 16px; }
+
+  /* Carousel */
+  .carousel-card  { width: calc(100vw - 32px); }
+  .carousel-track { min-height: 380px; }
+
+  /* About / Orbit */
+  .about-visual { min-height: 300px; padding: 20px; }
   .orbit-system { width: 220px; height: 220px; }
   .track-1 { width: 140px; height: 140px; }
   .track-2 { width: 206px; height: 206px; }
+
+  /* Node pozíciók kisebb orbit rendszerhez */
+  .node-user   { transform: translate(0px,   -80px); }
+  .node-ai     { transform: translate(88px,   24px); }
+  .node-dev    { transform: translate(-12px,  80px); }
+  .node-growth { transform: translate(-88px, -40px); }
+
+  /* Szekció fejlécek */
+  .section-header { margin-bottom: 36px; }
+
+  /* Footer */
+  .footer { padding: 40px 0 20px; }
+  .footer-brand p { font-size: 0.85rem; }
+
+  /* iOS auto-zoom megelőzése: input font-size minimum 16px */
+  .form-group input,
+  .form-group textarea,
+  .form-group select { font-size: 16px; }
 }
 
